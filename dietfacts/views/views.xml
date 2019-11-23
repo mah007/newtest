@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <!-- Inherit Form View to Modify it -->
+        <record id="view_dietfact_form_inherit" model="ir.ui.view">
+            <field name="name">view.dietfact.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//div[@name='options']" position="inside">
+                    <div>
+                        <field name="is_diet"/>
+                        <label for="is_diet"/>
+                    </div>
+                </xpath>
+
+                <xpath expr="//div[@name='pricing']" position="after">
+                    <label for="calories"/>
+                    <div name="calories">
+                        <field name="calories" class="oe_inline"/>
+                    </div>
+
+                    <label for="servingsize"/>
+                    <div name="servingsize">
+                        <field name="servingsize" class="oe_inline"/>
+                    </div>
+                    <label for="lastupdated"/>
+                    <div name="lastupdated">
+                        <field name="lastupdated" class="oe_inline"/>
+                    </div>
+
+
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>
